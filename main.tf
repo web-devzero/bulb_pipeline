@@ -2,11 +2,11 @@ provider "aws" {
   region     = "us-east-1"
 }
 
-resource "aws_s3_bucket" "basxy_test_bucket" {
-  bucket = "basxy-test-bucket"
+resource "aws_s3_bucket" "artifact_bucket" {
+  bucket = "basxy-pipelinerole-artifact-bucket"
 
   tags = {
-    Name        = "basxy-test-bucket"
+    Name        = "basxy-pipelinerole-artifact-bucket"
     Environment = "Dev"
   }
 }
