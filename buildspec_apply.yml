@@ -1,0 +1,26 @@
+version: 0.2
+
+env:
+  variables:
+    TF_VERSION: "1.1.2"
+
+phases:
+  install:
+    commands:
+      - pwd
+      - curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip
+      - unzip -o terraform.zip
+      - mv terraform /usr/local/bin/terraform   
+      - chmod +x /usr/local/bin/terraform
+      - terraform -version                    
+
+  build:
+    commands:
+      - pwd
+      - ls
+      - terraform init -no-color
+      - terraform apply --auto-approve
+
+  post_build:
+    commands:
+      - echo "Resources created by me"
