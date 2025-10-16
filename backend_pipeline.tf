@@ -172,7 +172,7 @@ resource "aws_codepipeline" "basxy_backend_pipeline" {
 
       configuration = {
         Owner          = "web-devzero"
-        Repo           = "bulb_pipeline"
+        Repo           = "farm-stack-backend"
         Branch         = "main"
         OAuthToken     = data.aws_ssm_parameter.basxy_github_token.value
       }
