@@ -158,7 +158,7 @@ resource "aws_instance" "basxy_frontend_server" {
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.basxy_public_subnet.id
   vpc_security_group_ids = [aws_security_group.basxy_frontend_sg.id]
-  key_name = "jbaba-key"
+  key_name = "Nexuskeypair"
  
   user_data = <<EOF
 #!/bin/bash
