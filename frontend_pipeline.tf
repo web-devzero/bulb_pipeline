@@ -1,7 +1,3 @@
-provider "aws" {
-    region = "us-east-1"
-}
-
 resource "aws_s3_bucket" "basxy_frontend_codepipeline_artifact_bucket" {
   bucket = "basxy-frontend-codepipeline-artifact-bucket"
 }
