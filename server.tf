@@ -100,6 +100,9 @@ resource "aws_instance" "basxy_backend_server" {
   subnet_id              = aws_subnet.basxy_public_subnet.id
   vpc_security_group_ids = [aws_security_group.basxy_backend_sg.id]
   key_name               = "Nexuskeypair"
+  tags = {
+    Name        = "Basxy_Backend_Server"
+  }
  
   user_data = <<EOF
 #!/bin/bash
@@ -159,6 +162,9 @@ resource "aws_instance" "basxy_frontend_server" {
   subnet_id              = aws_subnet.basxy_public_subnet.id
   vpc_security_group_ids = [aws_security_group.basxy_frontend_sg.id]
   key_name = "Nexuskeypair"
+  tags = {
+    Name        = "Basxy_frontend_Server"
+  }
  
   user_data = <<EOF
 #!/bin/bash
